@@ -1,0 +1,1 @@
+stat.execute("insert into student(id,name,age,gender,major) values("+id+",'"+name+"',"+age+",'"+gender+"','"+major+"')"); 

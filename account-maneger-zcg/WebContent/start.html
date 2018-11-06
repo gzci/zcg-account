@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ 
+    <title>登录页</title>
+    <link rel="stylesheet" href="css/layui.css">
+    <link rel="stylesheet" href="css/style.css">
+ 
+</head>
+<body>
+ 
+<div class="login-main">
+    <header class="layui-elip">登录</header>
+    <form name="form1" class="layui-form" action="AllServlet" method="post" >
+  <!--   <input type="hidden" name="methodName" value="10"/>  -->
+        <div class="layui-input-inline">
+            <input type="text" name="name" required lay-verify="required" placeholder="用户名" autocomplete="off"
+                   class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+            <input type="password" name="pwd" required lay-verify="required" placeholder="密码" autocomplete="off"
+                   class="layui-input">
+        </div>
+        <div class="layui-input-inline login-btn">
+            <button lay-submit lay-filter="login" class="layui-btn" onClick="left()">登录</button>
+        </div>
+        <hr/>
+        <div class="layui-input-inline">
+            <button lay-submit lay-filter="login" class="layui-btn layui-btn-primary" onClick="right()">管理员登录</button>
+        </div>
+        <!-- <div class="layui-input-inline">
+            <button type="button" class="layui-btn layui-btn-normal">微信登录</button>
+        </div> -->
+        <p><a href="withcssputin.html" class="fl">立即注册</a> <a href="superm.html" class="fr">管理员注册</a></p>
+  
+         </form>
+          
+</div>
+<script src="layui.js"></script>
+ <script type="text/javascript">
+ function left()
+
+ {
+
+ document.form1.action="AllServlet?methodName=6";
+
+document.form1.method="post";
+
+ document.form1.submit();
+
+ }
+
+function right()
+
+ {
+
+ document.form1.action="AllServlet?methodName=10";
+
+document.form1.method="post";
+
+ document.form1.submit();
+
+ } 
+ 
+    layui.use(['form','layer','jquery'], function () {
+
+      //    layer.msg('登录名或密码错误');
+           
+    	/*  $("#superin").click(function(){
+    		    alert("段落被点击了。");
+    		}); */
+    });
+   
+   
+</script>
+</body>
+
+</html>
